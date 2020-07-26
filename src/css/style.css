@@ -2,22 +2,22 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: auto;
+ul {
+  list-style-type: none;
 }
 
-.board {
+.data-table {
+  width: 600px;
+}
+
+.row {
   display: flex;
-  flex-wrap: wrap;
 }
 
-.cell {
-  border: dashed 1px green;
-  width: 120px;
-  height: 120px;
-  margin: 3px;
-}
-
-.active {
-  background-image: url('../img/goblin.png');
+.column {
+  width: 150px;
+  border: black dashed 1px;
+  padding-left: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
