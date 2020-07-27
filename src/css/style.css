@@ -1,23 +1,42 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 350px;
+  margin: auto;
 }
 
 ul {
   list-style-type: none;
+  margin-bottom: 20px;
 }
 
-.data-table {
-  width: 600px;
+.active {
+  font-weight: bold;
 }
 
-.row {
-  display: flex;
-}
-
-.column {
-  width: 150px;
+.cell {
   border: black dashed 1px;
   padding-left: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
+}
+
+.id {
+  width: 50px;
+}
+
+.title {
+  width: 200px;
+}
+
+.imdb {
+  width: 50px;
+}
+
+.year {
+  width: 50px;
 }
