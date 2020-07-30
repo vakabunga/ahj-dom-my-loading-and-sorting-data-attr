@@ -43,7 +43,7 @@ export function initTableHead(data) {
     th.classList.add(Object.keys(data[0])[i], 'cell');
     th.setAttribute('data-name', Object.keys(data[0])[i]);
     const thTitle = document.createTextNode(Object.keys(data[0])[i]);
-    const arrowImage = '<img class="arrowUp" src="src/img/up.png"></img><img class="arrowDown" src="src/img/down.png"></img>';
+    const arrowImage = '<img class="arrowUp" src="./img/up.png"></img><img class="arrowDown" src="./img/down.png"></img>';
     th.appendChild(thTitle);
     th.insertAdjacentHTML('beforeend', arrowImage);
     headRow.appendChild(th);
