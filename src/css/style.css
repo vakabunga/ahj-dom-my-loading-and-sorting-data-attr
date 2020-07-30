@@ -6,7 +6,9 @@
 
 body {
   width: 350px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
 }
 
 ul {
@@ -14,8 +16,14 @@ ul {
   margin-bottom: 20px;
 }
 
+.arrowUp, .arrowDown {
+  height: 15px;
+  display: none;
+}
+
 .active {
-  font-weight: bold;
+  display: inline;
+  vertical-align: sub;
 }
 
 .cell {
@@ -26,17 +34,21 @@ ul {
 }
 
 .id {
-  width: 50px;
+  width: 70px;
 }
 
 .title {
-  width: 200px;
+  width: 220px;
 }
 
 .imdb {
-  width: 50px;
+  width: 100px;
 }
 
 .year {
-  width: 50px;
+  width: 100px;
+}
+
+th {
+  text-align: left;
 }
