@@ -32,10 +32,31 @@ const incomeData = [
   },
 ];
 
-// функция создания таблицы из приходящих данных с формированием шапки
-export default function initTable(data) {
+// создаем шапку таблицы
+export function initTableHead(data) {
   const table = document.querySelector('.data-table');
-  table.textContent = ''; // очищаем таблицу
+  const thead = table.createTHead();
+  const headRow = thead.insertRow();
+
+  for (let i = 0; i < Object.keys(data[0]).length; i += 1) {
+    const th = document.createElement('th');
+    th.classList.add(Object.keys(data[0])[i], 'cell');
+    th.setAttribute('data-name', Object.keys(data[0])[i]);
+    const thTitle = document.createTextNode(Object.keys(data[0])[i]);
+    const arrowImage = '<img class="arrowUp" src="src/img/up.png"></img><img class="arrowDown" src="src/img/down.png"></img>';
+    th.appendChild(thTitle);
+    th.insertAdjacentHTML('beforeend', arrowImage);
+    headRow.appendChild(th);
+  }
+}
+
+// функция создания таблицы из приходящих данных
+export default function initTable(data) {
+  let table = document.querySelector('.data-table');
+  if (document.querySelector('tbody')) {
+    table = document.querySelector('tbody');
+    table.textContent = ''; // очищаем таблицу
+  }
   // собираем таблицу из приходящих данных
   for (let i = 0; i < data.length; i += 1) {
     const row = table.insertRow();
@@ -50,19 +71,8 @@ export default function initTable(data) {
       }
     }
   }
-
-  // создаем шапку таблицы
-  const thead = table.createTHead();
-  const headRow = thead.insertRow();
-
-  for (let i = 0; i < Object.keys(data[0]).length; i += 1) {
-    const th = document.createElement('th');
-    th.classList.add(Object.keys(data[0])[i], 'cell');
-    const thTitle = document.createTextNode(Object.keys(data[0])[i]);
-    th.appendChild(thTitle);
-    headRow.appendChild(th);
-  }
 }
 
 // инициализируем таблицу
 initTable(incomeData);
+initTableHead(incomeData);
